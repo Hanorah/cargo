@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+  <title>index</title>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+*{
+    margin:0;
+    padding: 0;
+}
+html,body {
+width:100%;
+height:100%;
+
+}
+.container 
+{
+width:100%;
+height:100%;
+}
+body{
+    overflow-x: hidden;
+}
+nav{
+    height: 6rem;
+    width: 100vw;
+    background-color: #0c0909;
+    box-shadow: 0 3px 20px rgb(0, 0, 0);
+    display: flex;
+    position: fixed;
+    position:fixed;
+z-index: 1;
+vertical-align:middle;
+
+top:0px;
+  
+}
+
+
+
+ul{
+    margin-left: 4em;
+}
+
+
+.nav-links{
+    display: flex;
+    list-style: none; 
+    width: 88vw;
+    padding: 0 0.7vw;
+    justify-content: space-evenly;
+    align-items: center;
+    text-transform: uppercase;
+}
+.nav-links li a{
+    text-decoration: none;
+    margin: 0 0.9vw;
+    color: #ffffff;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    font-weight: bolder;
+    font-size: large;
+}
+.nav-links li a:hover {
+    color: #928989ab;
+}
+.nav-links li {
+    position: relative;
+}
+
+.nav-links li a::before {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 0%;
+    background-color: #ff0202;
+    position: absolute;
+    transition: all ease-in-out 250ms;
+    margin: 0 0 0 10%;
+}
+.nav-links li a:hover::before{
+    width: 80%;
+}
+.navbar-brand{
+    margin-bottom: 1em;
+    margin-top: 2em;
+    margin-left: 1em;
+  border-right: 2px solid red;
+  color: #f2f5f7;
+}
+
+.join-button{
+    margin-left: 3em;
+    color: #131418;
+    background-color: #f70606;
+    border: 1.5px solid #f80404;
+    border-radius: 2em;
+    padding: 0.6rem 0.8rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.join-button:hover {
+    color: #f2f5f7;
+    background-color: transparent;
+    border:1.5px solid #f2f5f7;
+    transition: all ease-in-out 350ms;
+}
+
+/*Styling Hamburger Icon*/
+.hamburger div{
+    width: 30px;
+    height:3px;
+    background: #ffffff;
+    margin: 5px;
+    
+}
+.hamburger{
+    display: none;
+}
+
+
+/*Styling Hamburger Icon*/
+.hamburger div{
+    width: 30px;
+    height:3px;
+    background: #ffffff;
+    margin: 5px;
+    
+}
+.hamburger{
+    display: none;
+}
+
+/*Stying for small screens*/
+@media screen and (max-width: 800px){
+    nav{
+        position: fixed;
+        z-index: 3;
+    }
+    .hamburger{
+        display:block;
+        position: absolute;
+        cursor: pointer;
+        right: 5%;
+        top: 50%;
+        transform: translate(-5%, -50%);
+        z-index: 2;
+        transition: all 0.7s ease;
+    }
+    .nav-links{
+        position: fixed;
+        background: #202020;
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(50px at 90% -20%);
+        -webkit-clip-path: circle(50px at 90% -10%);
+        transition: all 1s ease-out;
+        pointer-events: none;
+      
+    }
+    .nav-links.open{
+        clip-path: circle(1000px at 90% -10%);
+        -webkit-clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+    }
+    .nav-links li{
+        opacity: 0;
+        margin-top: 3em;
+        margin-right: 4em;
+    }
+    
+    li.fade{
+        opacity: 1;
+    }
+}
+/*Animating Hamburger Icon on Click*/
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2{
+    transition: all 0.7s ease;
+    width:0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
+
+
+form.example input[type=text] {
+
+  padding: 10px;
+  margin-left: 5em;
+  font-size: 17px;
+  border: 1px solid rgba(173, 156, 156, 0);
+  float: left;
+  width: 50%;
+  background: #6e6c6c00;
+}
+
+form.example button {
+  float: left;
+  width: 10%;
+  padding: 10px;
+  background: #0c2e4b00;
+  color: rgba(162, 178, 185, 0.733);
+  font-size: 17px;
+  border: 1px solid rgba(128, 128, 128, 0);
+  border-left: none;
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #78858f25;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+b{
+    color: white;
+    font-size: 1em;
+    margin-top: 3em;
+    font-weight: bolder;
+    
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 100;
+}
+.container {
+    /*show heigh: auto*/
+    height: 70vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.cover {
+    margin-top: 14.5rem;
+    width: 100em;
+    height: 30rem;
+    opacity: 0.8;
+    
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+h1{
+    font-size: 3em;
+    font-weight: bolder;
+    
+    text-align: center;
+    color: rgb(253, 5, 5);
+}
+
+p{
+    font-weight: bold;
+    color: #570202;
+    font: optional;
+    text-align: center;
+}
+
+
+.btn {
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+ align-items: center;
+ justify-content: center;
+}
+
+/* Orange */
+.warning {
+    border-color: #0c2e4b00;
+ 
+    background-color: black;
+  color: rgb(255, 253, 248);
+  margin-right: 6em;
+}
+
+.warning:hover {
+  background: #ff0000;
+  color: white;
+}
+
+/* Red */
+.danger {
+    background-color: red;
+border-color: #4863ce00;
+  color: rgb(253, 253, 253);
+  margin-right: 6em;
+}
+
+.danger:hover {
+  background-color: #000000;
+  color: white;
+}
+h2{
+    color: #000000;
+    font-size: 2.5em;
+    text-align: center;
+}
+h3{
+    color: #000000;
+    font-size: 1em;
+    text-align: center;
+}
+h4{
+   margin-bottom: 3em;
+    margin-top: 3em;
+    text-align: center;
+    font-size: 3em;
+}
+h5{
+    font-size: 1em;
+    color: rgb(100, 45, 45);
+}
+hr{
+    color: red;
+}
+.grid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-gap: 1px;
+}
+
+.box {
+    background-color: rgba(68, 68, 68, 0);
+   
+}
+
+.box > img {
+    width: 100%;
+}
+
+.box:hover {
+    -webkit-transform: rotate(-7deg);
+    -moz-transform: rotate(-7deg);
+    -o-transform: rotate(-7deg);
+    transform: rotate(-7deg);
+}
+
+.box > img {
+    width: 100%;
+    height: auto;
+}
+.page-footer{
+    font-size: 1em;
+    background-color: rgb(145, 142, 142);
+  width: 100em;
+  height: 3em;
+  margin-top: 2em;
+  padding-top: 1em;
+  font-style: italic;
+
+}
+
+</style>
+</head>
+<body>
+
+
+<nav class="sticky">
+    <a class="navbar-brand" href="https://goo.gl/maps/opB6bkXxLfDk212A8" >
+        <i class="fa fa-plane fa-3x"></i>
+      </a>
+      <b>PEISHIP</b>
+    <div class="hamburger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+    </div>
+    <ul class="nav-links">
+        
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">TEAM</a></li>
+        <li><a href="#">LOGISTICS</a></li>
+        <li><a href="#">WHY PEISHIP</a></li>
+        <li><a href="#">CONTACT</a></li>
+        
+        <form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
+            <input type="text" placeholder="Search.." name="search2">
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+                  <li><button class="join-button" href="https://goo.gl/maps/opB6bkXxLfDk212A8">TRACK YOUR ORDER</button></li>
+    </ul>
+</nav>
+
+</div>
+<div class="container"><img class="cover" src="Voyages en Cargo.jpg">
+<div class="centered"><h1>LOGISTICS NETWORK COMPANY</h1><P>The Leader in Global Logistics, Transportation and Stoage Solutions for Explosives, Munitions and Weapons Systems</P>
+<br>
+<button class="btn warning">Get Free Quote</button>
+<button class="btn danger">View Our Services</button>
+</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h2>DOOR-TO-DOOR SOLUTIONS</h2>
+<br>
+<h3>World class shipper for military defence contactors, We ship ammunitions, guns, planes, tanks and any material that needs to be shipped.</h3>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<div class="zone blue grid-wrapper">
+    <div class="box zone"><img src="1.jpg"></div>
+    <div class="box zone"><img src="7.jpg"></div>
+    <div class="box zone"><img src="3.jpg"></div>
+    <div class="box zone"><img src="4.jpg"></div>
+    <div class="box zone"><img src="pe.jpg"></div>
+    <div class="box zone"><img src="8.jpg"></div>
+  </div>
+  <h4>OUR MARKET</h4>
+  <div class="zone blue grid-wrapper">
+    <div class="box "><img src="defence.jpg"><br><hr><h5>DEFENCE</h5></div>
+    <div class="box"><img src="aerospace.jpg"><br><hr><h5>AEROSPACE</h5> </div>
+    <div class="box"><img src="cargo.jpg"><br><hr><h5> CARGO SHIPPING</h5></div>
+
+
+    <footer class="page-footer font-small blue fixed-bottom">
+        <div class="footer-copyright text-center py-3">© 2023 Copyright:
+            <a href="https://mailchi.mp/0d2550bfec0a/hanorah">NORAH</a>
+          </div>   
+</footer>
+<script>
+  const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+const links = document.querySelectorAll(".nav-links li");
+
+hamburger.addEventListener('click', ()=>{
+   //Animate Links
+    navLinks.classList.toggle("open");
+    links.forEach(link => {
+        link.classList.toggle("fade");
+    });
+
+    //Hamburger Animation
+    hamburger.classList.toggle("toggle");
+});
+</script>
+</body>
+</html>
